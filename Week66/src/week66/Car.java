@@ -9,6 +9,19 @@ package week66;
  *
  * @author 4aygif55
  */
-public class Car {
+public class Car 
+{
+    private String reg;
+    
+    public Car(String regIn)
+    {
+    reg = regIn;
+    }
+    
+    public String getRegNo()
+    {
+     return reg;
+    }
+    
     
 }

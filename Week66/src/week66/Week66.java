@@ -26,13 +26,32 @@ public class Week66 {
             System.out.println("C - View number of empty spaces");
             System.out.println("X - exit");
 
+            
             String input = scanIn.nextLine();
             if (input.equals("a")) {
-                System.out.println("You have chose to add a car");
+                System.out.println("You have chose to add a car \n Please enter a registration number");
+
+                String reg = scanIn.nextLine();
+
+                if (cp.addCar(new Car(reg))) {
+                    System.out.println("The car has been added!");
+                } else {
+                    System.out.println("The carpark is full!");
+                }
+
             } else if (input.equals("b")) {
-                System.out.println("You have chose to remove a car");
+                System.out.println("You have chose to remove a car \n Please enter a reg number!");
+
+                String reg = scanIn.nextLine();
+
+                if (cp.removeCar(reg)) {
+                    System.out.println("The car has been removed!");
+                } else {
+                    System.out.println("The car does not exist");
+                }
             } else if (input.equals("c")) {
-                System.out.println("Empty spaces");
+                System.out.println("Empty spaces: " + cp.getEmptySpace());
+
             } else if (input.equals("x")) {
                 state = 0;
             } else {
